@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             text-align: center;
             padding: 50px;
-            background-color: #1e3a8a; /* Deep blue tint */
-            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png'); /* Gaming controller button pattern */
+            background-color: #1e3a8a;
+            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
             color: white;
+            cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
         }
         h1 {
             color: #93c5fd;
+            font-size: 2.5em;
         }
         p {
             margin: 20px 0;
@@ -22,7 +25,23 @@
             font-size: 18px;
             color: #dbeafe;
         }
-        a {
+        nav {
+            background-color: #2563eb;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+        nav a:hover {
+            transform: scale(1.1);
+        }
+        a.button {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 15px;
@@ -30,17 +49,23 @@
             background-color: #2563eb;
             color: white;
             border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        a:hover {
+        a.button:hover {
             background-color: #1d4ed8;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </nav>
     <h1>About Me</h1>
     <p>My name is Brodie Detterman, and I am a Computer Science Student at Tiffin University. I am concentrating in software development and game design. Game design has been my main focus from the start of my college journey. I have learned to use the Unity engine and have learned the C# language through my computer science courses and through using Unity.</p>
     <p>I have had multiple projects using C#, including a mock Windows Forms desktop application and multiple game prototypes. In addition, I have skills in the Python language with multiple projects that have helped me learn. Overall, I am passionate about game design, and through my capstone project, I hope to show off what I have learned through my schooling.</p>
-    <a href="index.html">Go Back to Home</a>
+    <a href="index.html" class="button">Go Back to Home</a>
 </body>
 </html>
 
