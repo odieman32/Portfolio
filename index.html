@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Page</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             text-align: center;
             padding: 50px;
-            background-color: #1e3a8a; /* Deep blue tint */
-            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png'); /* Gaming controller button pattern */
+            background-color: #1e3a8a;
+            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
             color: white;
+            cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
         }
         h1 {
             color: #93c5fd;
+            font-size: 2.5em;
         }
         p {
             margin: 20px 0;
@@ -22,29 +25,53 @@
             font-size: 18px;
             color: #dbeafe;
         }
-        a {
+        nav {
+            background-color: #2563eb;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+        nav a:hover {
+            transform: scale(1.1);
+        }
+        a.button {
             display: inline-block;
-            margin: 10px 0;
+            margin-top: 20px;
             padding: 10px 15px;
             text-decoration: none;
             background-color: #2563eb;
             color: white;
             border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        a:hover {
+        a.button:hover {
             background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+        .game-link {
+            display: block;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </nav>
     <h1>Welcome! This is my page!</h1>
     <p>Here are some game prototype projects I have worked on!</p>
-
-    <!-- Game Project Links -->
-    <a href="https://itch.io/embed-upload/12194369?color=333333" target="_blank">Gunner 7</a><br>
-    <a href="https://itch.io/embed-upload/11948601?color=333333" target="_blank">The Grand Adventure</a><br>
-    <a href="https://itch.io/embed-upload/11761281?color=333333" target="_blank">Journey to the End</a><br>
-
-    <a href="about.html">Go to About Page</a>
+    <a class="game-link" href="https://itch.io/embed-upload/12194369?color=333333" target="_blank">Gunner 7</a>
+    <a class="game-link" href="https://itch.io/embed-upload/11948601?color=333333" target="_blank">The Grand Adventure</a>
+    <a class="game-link" href="https://itch.io/embed-upload/11761281?color=333333" target="_blank">Journey to the End</a>
+    <a href="about.html" class="button">Go to About Page</a>
 </body>
 </html>
+
