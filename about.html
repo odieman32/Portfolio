@@ -8,21 +8,24 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* Global styling */
     body {
       margin: 0; padding: 0;
       font-family: 'Orbitron', sans-serif;
-      color: #e0e7ff;
       background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
       background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
       background-blend-mode: overlay;
       cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
+      color: #cbd5e1; /* default darker blue text */
     }
 
+    /* Navbar */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; justify-content: center; gap: 2rem;
@@ -35,7 +38,7 @@
     }
     nav a::after {
       content: ''; position: absolute; left: 0; bottom: -4px;
-      width: 0; height: 2px; background: #93c5fd;
+      width: 0; height: 2px; background: #3b82f6;
       transition: width 0.3s ease;
     }
     nav a:hover {
@@ -45,38 +48,30 @@
       width: 100%;
     }
 
-    /* Content bump below navbar */
+    /* Main content */
     main {
       padding: 6rem 2rem 2rem;
       max-width: 800px; margin: auto;
       animation: fadeIn 1s ease forwards;
     }
-    h1 {
-      font-size: 3em; color: #93c5fd; margin-bottom: 0.5em;
+    main h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      color: #3b82f6;    /* darker blue heading */
       animation: fadeIn 1.2s ease forwards;
     }
-    p {
-      font-size: 1.15em; line-height: 1.6; margin-bottom: 1.5em;
-      color: #dbeafe; animation: fadeIn 1.4s ease forwards;
-    }
-
-    /* Back button */
-    .back-btn {
-      display: inline-block; margin-top: 2em;
-      padding: 0.8em 1.4em; background: #2563eb;
-      color: #fff; border-radius: 6px; text-decoration: none;
-      font-weight: 700; transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeIn 1.6s ease forwards;
-    }
-    .back-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(37,99,235,0.6);
+    main p {
+      font-size: 1.15em;
+      line-height: 1.6;
+      margin-bottom: 1.5em;
+      color: #60a5fa;    /* mid-tone blue paragraphs */
+      animation: fadeIn 1.4s ease forwards;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation Bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -97,11 +92,10 @@
       multiple projects that have helped me learn. Overall, I am passionate about game design,
       and through my capstone project, I hope to show off what I have learned through my schooling.
     </p>
-
-    <a href="index.html" class="back-btn">← Back to Home</a>
   </main>
 
 </body>
 </html>
+
 
 
