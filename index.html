@@ -6,30 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My GitHub Page</title>
   <style>
-    /* 1. Import a futuristic font */
+    /* Import a futuristic font */
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    /* 2. Keyframes for fade-in */
+    /* Fade-in animation for page elements */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* 3. Global body styling: gradient + pattern + custom cursor */
+    /* Global styling: gradient background + texture + custom cursor */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
-      color: #e0e7ff;
       background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      /* subtle hex pattern overlay */
       background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
       background-blend-mode: overlay;
       cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
+      color: #cbd5e1; /* slightly darker blue for default text */
       overflow-x: hidden;
     }
 
-    /* 4. Fixed navbar with slide-in animation */
+    /* Fixed navbar with animated links */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -42,19 +41,19 @@
       animation: fadeIn 0.8s ease forwards;
     }
     nav a {
-      color: #fff;
+      color: #fff;               /* white for nav labels */
       text-decoration: none;
       font-weight: 700;
       position: relative;
       transition: transform 0.2s ease;
     }
-    /* underline-on-hover effect */
+    /* Underline-on-hover effect */
     nav a::after {
       content: '';
       position: absolute;
       left: 0; bottom: -4px;
       width: 0; height: 2px;
-      background: #93c5fd;
+      background: #3b82f6;     /* darker blue underline */
       transition: width 0.3s ease;
     }
     nav a:hover {
@@ -64,7 +63,7 @@
       width: 100%;
     }
 
-    /* 5. Hero section spacing (push below navbar) */
+    /* Hero section (pushed below navbar) */
     header {
       padding-top: 6rem;
       text-align: center;
@@ -72,16 +71,17 @@
     header h1 {
       font-size: 3em;
       margin: 0.5em 0;
-      color: #93c5fd;
+      color: #3b82f6;            /* darker blue heading */
       animation: fadeIn 1s ease forwards;
     }
     header p {
       font-size: 1.2em;
       margin-bottom: 2em;
+      color: #60a5fa;            /* mid-tone blue for paragraph */
       animation: fadeIn 1.2s ease forwards;
     }
 
-    /* 6. Game link buttons with pop-in and hover */
+    /* Game link cards */
     .games {
       display: flex;
       flex-direction: column;
@@ -89,7 +89,6 @@
       gap: 1rem;
     }
     .games a {
-      display: block;
       width: 250px;
       padding: 0.8em;
       text-align: center;
@@ -105,36 +104,17 @@
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
     }
-
-    /* 7. Footer link */
-    footer {
-      margin: 3em 0;
-      text-align: center;
-      animation: fadeIn 1.6s ease forwards;
-    }
-    footer a {
-      background: #2563eb;
-      color: #fff;
-      padding: 0.6em 1.2em;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.3s ease;
-    }
-    footer a:hover {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation Bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Content -->
   <header>
     <h1>Welcome! This is my page!</h1>
     <p>Here are some game prototype projects I have worked on! Click to play:</p>
@@ -142,23 +122,10 @@
 
   <!-- Game Links -->
   <main class="games">
-    <a href="https://itch.io/embed-upload/12194369?color=333333" target="_blank">
-      Gunner 7
-    </a>
-    <a href="https://itch.io/embed-upload/11948601?color=333333" target="_blank">
-      The Grand Adventure
-    </a>
-    <a href="https://itch.io/embed-upload/11761281?color=333333" target="_blank">
-      Journey to the End
-    </a>
+    <a href="https://itch.io/embed-upload/12194369?color=333333" target="_blank">Gunner 7</a>
+    <a href="https://itch.io/embed-upload/11948601?color=333333" target="_blank">The Grand Adventure</a>
+    <a href="https://itch.io/embed-upload/11761281?color=333333" target="_blank">Journey to the End</a>
   </main>
-
-  <!-- Footer CTA -->
-  <footer>
-    <a href="about.html">Learn About Me</a>
-  </footer>
 
 </body>
 </html>
-
-
