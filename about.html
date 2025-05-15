@@ -7,7 +7,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    /* Fade & slide up animation with delay */
+    /* Fade & slide up animation */
     @keyframes fadeSlideUp {
       0% {
         opacity: 0;
@@ -19,14 +19,38 @@
       }
     }
 
+    /* Star twinkle animation */
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Global styling */
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
-      background-blend-mode: overlay;
       color: white;
+      overflow-x: hidden;
       cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
+      background: linear-gradient(135deg, #0b2346 0%, #112f5c 100%);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Starfield container */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(2px 2px at 20% 30%, #cbd5e1 70%, transparent 70%),
+        radial-gradient(1.5px 1.5px at 40% 60%, #cbd5e1 70%, transparent 70%),
+        radial-gradient(2.5px 2.5px at 70% 20%, #cbd5e1 70%, transparent 70%),
+        radial-gradient(1.8px 1.8px at 85% 75%, #cbd5e1 70%, transparent 70%);
+      background-repeat: no-repeat;
+      animation: twinkle 3s infinite ease-in-out alternate;
+      z-index: 0;
     }
 
     nav {
@@ -67,6 +91,8 @@
       max-width: 700px;
       margin: 6rem auto 3rem;
       padding: 0 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -81,20 +107,20 @@
       font-size: 1.15em;
       line-height: 1.6;
       margin-bottom: 1.5rem;
-      color: white;
-      opacity: 0;
       animation: fadeSlideUp 1s ease forwards;
       animation-fill-mode: forwards;
+      opacity: 0;
     }
 
-    /* Stagger animation delay on paragraphs */
+    /* Staggered animation delay */
     p:nth-of-type(1) {
       animation-delay: 0.5s;
+      color: white;
     }
     p:nth-of-type(2) {
       animation-delay: 1s;
+      color: white;
     }
-
   </style>
 </head>
 <body>
@@ -114,6 +140,7 @@
 
 </body>
 </html>
+
 
 
 
