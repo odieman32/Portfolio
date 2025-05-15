@@ -1,132 +1,176 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My GitHub Page</title>
+  <title>Brodie's Game Portfolio</title>
   <style>
-    /* Import a futuristic font */
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    /* Fade-in animation for page elements */
+    /* --- Keyframe Animations --- */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* Global styling: gradient background + texture + custom cursor */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
-      background-blend-mode: overlay;
-      cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
-      color: #cbd5e1; /* slightly darker blue for default text */
-      overflow-x: hidden;
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
-    /* Fixed navbar with animated links */
+    /* --- General Styling --- */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(#1e3a8a, #0f172a);
+      color: #cbd5e1;
+      overflow-x: hidden;
+      cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
+    }
+
+    /* --- Background Stars --- */
+    body::before {
+      content: '';
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.1;
+      z-index: -1;
+      animation: fadeIn 2s ease-in-out;
+    }
+
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 100;
-      animation: fadeIn 0.8s ease forwards;
+      z-index: 999;
     }
     nav a {
-      color: #fff;               /* white for nav labels */
+      color: white;
       text-decoration: none;
       font-weight: 700;
-      position: relative;
       transition: transform 0.2s ease;
     }
-    /* Underline-on-hover effect */
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: -4px;
-      width: 0; height: 2px;
-      background: #3b82f6;     /* darker blue underline */
-      transition: width 0.3s ease;
-    }
     nav a:hover {
-      transform: translateY(-2px);
-    }
-    nav a:hover::after {
-      width: 100%;
+      transform: scale(1.1);
     }
 
-    /* Hero section (pushed below navbar) */
-    header {
-      padding-top: 6rem;
+    /* --- Typewriter Header --- */
+    .hero {
+      margin-top: 6rem;
       text-align: center;
     }
-    header h1 {
-      font-size: 3em;
-      margin: 0.5em 0;
-      color: #3b82f6;            /* darker blue heading */
-      animation: fadeIn 1s ease forwards;
+    .hero h1 {
+      font-size: 2.5em;
+      color: #60a5fa;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #60a5fa;
+      width: 0;
+      animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
     }
-    header p {
+    .hero p {
+      margin-top: 1rem;
       font-size: 1.2em;
-      margin-bottom: 2em;
-      color: #60a5fa;            /* mid-tone blue for paragraph */
-      animation: fadeIn 1.2s ease forwards;
+      color: #93c5fd;
+      animation: fadeIn 4s ease-in;
     }
 
-    /* Game link cards */
+    /* --- Game Card Grid --- */
     .games {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      animation: fadeIn 2s ease-in;
     }
-    .games a {
-      width: 250px;
-      padding: 0.8em;
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #3b82f6;
+      border-radius: 12px;
+      padding: 1.5rem;
       text-align: center;
-      background: #2563eb;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      animation: fadeIn 1.4s ease forwards;
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .games a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.7);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .card a:hover {
+      background-color: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #64748b;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Hero Content -->
-  <header>
-    <h1>Welcome! This is my page!</h1>
-    <p>Here are some game prototype projects I have worked on! Click to play:</p>
-  </header>
+  <!-- Typewriter Hero Section -->
+  <section class="hero">
+    <h1>Loading Brodie's Portfolio...</h1>
+    <p>Explore my latest game development projects below 👇</p>
+  </section>
 
-  <!-- Game Links -->
-  <main class="games">
-    <a href="https://itch.io/embed-upload/13501266?color=333333" target="_blank">Raise The Difficulty</a>
-    <a href="https://itch.io/embed-upload/12194369?color=333333" target="_blank">Gunner 7</a>
-    <a href="https://itch.io/embed-upload/11948601?color=333333" target="_blank">The Grand Adventure</a>
-    <a href="https://itch.io/embed-upload/11761281?color=333333" target="_blank">Journey to the End</a>
-  </main>
+  <!-- Game Cards Section -->
+  <section class="games">
+    <div class="card">
+      <h2>🎯 Raise The Difficulty</h2>
+      <p>2D Rouge-Like with Adaptive Difficulty System implemented for my Capstone Project.</p>
+      <a href="https://itch.io/embed-upload/13501266?color=3e3030" target="_blank">Play Game</a>
+    </div>
+    <div class="card">
+      <h2>🎯 Gunner 7</h2>
+      <p>A fast-paced shooter prototype built in Unity.</p>
+      <a href="https://itch.io/embed-upload/12194369?color=333333" target="_blank">Play Game</a>
+    </div>
+    <div class="card">
+      <h2>🧭 The Grand Adventure</h2>
+      <p>An exploration-driven platformer experience.</p>
+      <a href="https://itch.io/embed-upload/11948601?color=333333" target="_blank">Play Game</a>
+    </div>
+    <div class="card">
+      <h2>🚀 Journey to the End</h2>
+      <p>A sci-fi themed endless runner style game.</p>
+      <a href="https://itch.io/embed-upload/11761281?color=333333" target="_blank">Play Game</a>
+    </div>
+  </section>
 
+  <footer>
+    &copy; 2025 Brodie Detterman — Powered by HTML & imagination 🎮
+  </footer>
 </body>
 </html>
+
