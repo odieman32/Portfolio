@@ -4,7 +4,7 @@ Welcome to my portfolio website!
 This site highlights my background, skills, and recent game development projects.
 
 🚀 **About Me**  
-I am a Computer Science student at Tiffin University, concentrating in software development and game design. My passion lies in creating games and software that are both innovative and fun. I've developed multiple projects using C# and Unity, along with additional experience in Python programming.
+I am a Computer Science Graduate from Tiffin University, concentrated in software development and game design. My passion lies in creating games and software that are both innovative and fun. I've developed multiple projects using C# and Unity, along with additional experience in Python programming.
 
 🎮 **Projects Featured**
 - Raise The Difficulty (Capstone)
