@@ -7,19 +7,25 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    /* Fade in animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Fade & slide up animation with delay */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(#1e3a8a, #0f172a);
-      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
       background-blend-mode: overlay;
-      color: #cbd5e1;
+      color: white;
       cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
     }
 
@@ -61,21 +67,32 @@
       max-width: 700px;
       margin: 6rem auto 3rem;
       padding: 0 1rem;
-      animation: fadeIn 1.2s ease forwards;
     }
 
     h1 {
       font-size: 3em;
       margin-bottom: 1rem;
       color: #60a5fa;
-      animation: fadeIn 1.4s ease forwards;
+      text-shadow: 0 0 8px #93c5fd;
+      animation: fadeSlideUp 1s ease forwards;
     }
+
     p {
       font-size: 1.15em;
       line-height: 1.6;
-      color: #a5b4fc;
       margin-bottom: 1.5rem;
-      animation: fadeIn 1.6s ease forwards;
+      color: white;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-fill-mode: forwards;
+    }
+
+    /* Stagger animation delay on paragraphs */
+    p:nth-of-type(1) {
+      animation-delay: 0.5s;
+    }
+    p:nth-of-type(2) {
+      animation-delay: 1s;
     }
 
   </style>
@@ -97,6 +114,7 @@
 
 </body>
 </html>
+
 
 
 
