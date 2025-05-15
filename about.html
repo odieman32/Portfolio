@@ -1,44 +1,53 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Brodie Detterman</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    /* Fade-in animation */
+    /* Fade in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Global styling */
     body {
-      margin: 0; padding: 0;
+      margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+      background: radial-gradient(#1e3a8a, #0f172a);
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
       background-blend-mode: overlay;
+      color: #cbd5e1;
       cursor: url('https://cur.cursors-4u.net/games/gam-10/gam1087.cur'), auto;
-      color: #cbd5e1; /* default darker blue text */
     }
 
-    /* Navbar */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      display: flex; justify-content: center; gap: 2rem;
-      padding: 1rem 0; background: rgba(0,0,0,0.5); z-index: 100;
-      animation: fadeIn 0.8s ease forwards;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
     }
     nav a {
-      color: #fff; text-decoration: none; font-weight: 700;
-      position: relative; transition: transform 0.2s ease;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      position: relative;
+      transition: transform 0.2s ease;
     }
     nav a::after {
-      content: ''; position: absolute; left: 0; bottom: -4px;
-      width: 0; height: 2px; background: #3b82f6;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #60a5fa;
       transition: width 0.3s ease;
     }
     nav a:hover {
@@ -48,30 +57,32 @@
       width: 100%;
     }
 
-    /* Main content */
     main {
-      padding: 6rem 2rem 2rem;
-      max-width: 800px; margin: auto;
-      animation: fadeIn 1s ease forwards;
-    }
-    main h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-      color: #3b82f6;    /* darker blue heading */
+      max-width: 700px;
+      margin: 6rem auto 3rem;
+      padding: 0 1rem;
       animation: fadeIn 1.2s ease forwards;
     }
-    main p {
-      font-size: 1.15em;
-      line-height: 1.6;
-      margin-bottom: 1.5em;
-      color: #60a5fa;    /* mid-tone blue paragraphs */
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 1rem;
+      color: #60a5fa;
       animation: fadeIn 1.4s ease forwards;
     }
+    p {
+      font-size: 1.15em;
+      line-height: 1.6;
+      color: #a5b4fc;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1.6s ease forwards;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -80,18 +91,8 @@
   <!-- About Content -->
   <main>
     <h1>About Me</h1>
-    <p>
-      My name is Brodie Detterman, and I am a Computer Science Student at Tiffin University.
-      I am concentrating in software development and game design. Game design has been my main
-      focus from the start of my college journey. I have learned to use the Unity engine and have
-      learned the C# language through my computer science courses and through using Unity.
-    </p>
-    <p>
-      I have had multiple projects using C#, including a mock Windows Forms desktop application
-      and multiple game prototypes. In addition, I have skills in the Python language with
-      multiple projects that have helped me learn. Overall, I am passionate about game design,
-      and through my capstone project, I hope to show off what I have learned through my schooling.
-    </p>
+    <p>My name is Brodie Detterman, and I am a Computer Science Student at Tiffin University. I am concentrating in software development and game design. Game design has been my main focus from the start of my college journey. I have learned to use the Unity engine and have learned the C# language through my computer science courses and through using Unity.</p>
+    <p>I have had multiple projects using C#, including a mock Windows Forms desktop application and multiple game prototypes. In addition, I have skills in the Python language with multiple projects that have helped me learn. Overall, I am passionate about game design, and through my capstone project, I hope to show off what I have learned through my schooling.</p>
   </main>
 
 </body>
